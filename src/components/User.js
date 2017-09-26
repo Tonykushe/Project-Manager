@@ -6,6 +6,7 @@ class User extends Component {
 	    return (
 	      <div className='Projects'>
 	        <p>Username: {this.props.username}</p>
+	        <h4>Hi there</h4>
 	      </div>
 
 	      );
