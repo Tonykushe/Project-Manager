@@ -1,21 +1,31 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Main from './components/Main';
+import User from './components/User'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+    constructor() {
+      super();
+      this.state = {
+        username: 'Tony'
+      };
+    }
 
-export default App;
+    changeName(newName) {
+      this.setState({
+        username: newName
+      });
+    }
+
+    render(){
+      return(
+        <div>
+          <Main changeName={this.changeName.bind(this)}/>
+          <User username={this.state.username}/>
+        </div>
+      );
+    }
+  }
+
+
+ export default App
+
